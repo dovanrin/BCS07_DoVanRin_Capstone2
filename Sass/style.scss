@@ -1,0 +1,487 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Jost", sans-serif;
+  overflow-x: hidden;
+  background-color: #fff;
+  color: #212529;
+  // padding: 0;
+  // margin: 0;
+  // box-sizing: border-box;
+}
+// import các file hổ trợ
+@import "./helper/reponsive";
+@import "./helper/mixin";
+@import "./helper/variables";
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// color khai báo biến
+$color-primary: #2a72dc;
+$color-secondary: #1d355e;
+$color-white: #fff;
+$color-green: #189a46;
+// font-weight
+$fw-thin: 300;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+// font-size
+$fs-1: 16px;
+$fs-2: 18px;
+$fs-3: 20px;
+$fs-4: 40px;
+$fs-5: 60px;
+//Spacing
+$spacer: 1rem;
+// mixin: cú pháp khai báo, dùng  từ khóa @mixin tên (tham số truyền vào){các thuộc tính cần css hay được sử dụng}
+@mixin styleText($fs, $fw, $color) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+}
+@mixin styleButton(
+  $padding,
+  $bg-color,
+  $border,
+  $color,
+  $color-hover,
+  $border-hover,
+  $bg-hover
+) {
+  padding: $padding;
+  background-color: $bg-color;
+  border: $border;
+  color: $color;
+  border-radius: 8px;
+  &:hover {
+    color: $color-hover;
+    border: $border-hover;
+    background-color: $bg-hover;
+    transition: all 0.4s;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
+// HEADER
+header {
+  background-color: $color-green;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
+
+  display: grid;
+  align-items: center;
+  // position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  .navbar {
+    .navbar-brand {
+      font-size: 34px;
+      font-weight: 600;
+      color: $color-secondary;
+    }
+    .bar {
+      color: $color-secondary;
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+      @media screen and (max-width: 992px) {
+        & {
+          display: block;
+        }
+      }
+    }
+
+    .navbar-nav {
+      .nav-item {
+        padding: 0 16px;
+        position: relative;
+      }
+    }
+    .dangKy {
+      button {
+        @include styleButton(
+          5px 10px,
+          $color-primary,
+          2px solid $color-primary,
+          $color-white,
+          $color-primary,
+          2px solid $color-primary,
+          $color-white
+        );
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      }
+    }
+    #navbar-content {
+      .nav-link {
+        font-size: 1.2em;
+        color: $color-secondary;
+        font-weight: 400;
+        padding: 14px 0;
+        position: relative;
+        transition: all 0.5s ease;
+        &:hover {
+          color: $color-white;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 0;
+          background-color: $color-white;
+          display: block;
+          bottom: 13px;
+          transition: all 0.5s ease;
+        }
+        &:hover::before {
+          width: 100%;
+        }
+      }
+    }
+    .shopping {
+      .fa-cart-shopping {
+        margin-left: 20px;
+        font-size: 20px;
+        color: $color-secondary;
+        &:hover {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+// Banner
+.pcCarousel {
+  .pcCarousel__content {
+    .owl-theme {
+      .owl-nav {
+        display: none;
+      }
+    }
+
+    .pcCarousel__banner {
+      min-height: calc(100vh - 50px);
+      // z-index: 0;
+      // display: grid;
+      align-items: center;
+      position: relative;
+      // margin-top: 20px;
+    }
+    .pcCarousel__banner--1 {
+      background-image: url(../img/boot-nam-1.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .pcCarousel__banner--2 {
+      background-image: url(../img/giày-nike-m2k-rep-800x461.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    .pcCarousel__banner--3 {
+      background-image: url(../img/11-mau-giay-doi-dep-cho-tinh-nhan-xin-so-nhat-2022-05082022113147.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+.product {
+  padding: 30px 0;
+  .product_title {
+    text-align: center;
+    h2 {
+      @include styleText($fs-3, $fw-bold, $color-secondary);
+    }
+  }
+  .product_content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    // @media screen and (max-width: 992px) {
+    //   & {
+    //     padding-left: 20px;
+    //   }
+    // }
+    .product_item {
+      width: calc(100% / 3 - 30px);
+      padding: 20px;
+      background-color: #bddaf9;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border-radius: 10px;
+
+      position: relative;
+      // animation-delay: 3s;
+      //dùng for để chạy vòng lập từng item.
+      // @for $i from 0 through 5 {
+      //   &:nth-child(#{$i + 1}) {
+      //     animation-delay: (0s + $i);
+      //   }
+      // }
+      @media screen and (max-width: 992px) {
+        & {
+          width: calc(100% / 2 - 30px);
+        }
+      }
+      @media screen and (max-width: 650px) {
+        & {
+          width: 100%;
+          margin: 0 25px;
+        }
+      }
+      animation: formMate;
+      animation-duration: 1s;
+      &::after {
+        content: "Bấm để xem Thông Tin";
+        position: absolute;
+        bottom: 155px;
+        left: auto;
+        height: 50px;
+        width: 89%;
+        background-color: rgba(255, 182, 193, 0.61);
+        display: none;
+        // transition: all 0.5s ease;
+        font-size: 20px;
+        color: $color-secondary;
+        text-align: center;
+        line-height: 50px;
+        transition: all 0.2s;
+      }
+      img {
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 10px;
+        transform: scale(1);
+        transition: all 0.5s;
+        position: relative;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      .product_text {
+        margin-top: 20px;
+        h3 {
+          display: flex;
+          justify-content: space-between;
+          @include styleText($fs-3, $fw-bold, $color-primary);
+        }
+        // .gategory {
+        //   @include styleText($fs-2, $fw-medium, $color-secondary);
+        //   margin-top: 15px;
+        // }
+        .rate_buy {
+          @extend .flex-between;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+          .rate {
+            color: rgb(235, 235, 28);
+            align-items: center;
+          }
+          button {
+            @include styleButton(
+              10px 20px,
+              $color-green,
+              2px solid $color-green,
+              $color-white,
+              $color-primary,
+              2px solid $color-primary,
+              $color-white
+            );
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          }
+        }
+      }
+    }
+  }
+}
+// footer
+footer {
+  background-color: $color-green;
+  padding: 20px;
+  color: $color-secondary;
+  a:hover {
+    text-decoration: underline;
+  }
+  .footer__top {
+    padding: 64px 0;
+  }
+  .footer__item {
+    h5 {
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+    ul {
+      li {
+        color: $color-secondary;
+        margin-bottom: 12px;
+      }
+    }
+    a {
+      color: $color-secondary;
+      transition: all 0.5s ease;
+      &:hover {
+        color: white;
+      }
+    }
+    .social__icon {
+      a {
+        display: inline-block;
+        margin-right: 16px;
+      }
+    }
+  }
+  .footer__bottom {
+    border-top: 1px solid rgba(103, 99, 99, 0.14);
+    a {
+      color: #f53626;
+    }
+  }
+}
+// deltel============
+.realate {
+  padding: 30px;
+  color: $color-secondary;
+  h2 {
+    text-align: center;
+    margin: 30px 0;
+  }
+  .realate_content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #cfcbcb;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    .realate_img {
+      width: 60%;
+
+      img {
+        width: 100%;
+        border-radius: 10px;
+        margin-right: 30px;
+      }
+    }
+    .realate_text {
+      margin: 10px 30px;
+
+      padding: 51px;
+      @media screen and (max-width: 750px) {
+        & {
+          padding-top: 0;
+          margin-top: 0;
+        }
+      }
+      .realate_size {
+        .size {
+          span {
+            background-color: cadetblue;
+            font-size: $fs-3;
+            font-weight: $fw-medium;
+            margin-right: 10px;
+            padding: 5px;
+          }
+        }
+        .sort {
+          display: flex;
+          align-items: flex-start;
+          height: 100%;
+          justify-content: center;
+
+          button {
+            @include styleButton(
+              8px 15px,
+              $color-green,
+              2px solid $color-green,
+              $color-white,
+              $color-primary,
+              2px solid $color-primary,
+              $color-white
+            );
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          }
+          h2 {
+            margin: 0 20px;
+            font-size: 25px;
+            border: 1px solid #212529;
+            padding: 8px 15px;
+            // width: 50px;
+          }
+        }
+      }
+    }
+  }
+  .add_car {
+    text-align: center;
+    margin-top: 30px;
+    button {
+      @include styleButton(
+        8px 40px,
+        $color-green,
+        2px solid $color-green,
+        $color-white,
+        $color-primary,
+        2px solid $color-primary,
+        $color-white
+      );
+    }
+  }
+}
+// ============REGITER================
+.regiter {
+  padding: 100px 0 50px;
+  .form-label {
+    color: $color-secondary;
+    font-size: $fs-3;
+  }
+  h1 {
+    text-align: center;
+    color: $color-primary;
+  }
+
+  .check_gender {
+    // text-align: center;
+    // display: flex;
+    // justify-content: space-around;
+    .chia_cot {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  .submit {
+    text-align: center;
+    button {
+      font-size: $fs-3;
+      @include styleButton(
+        8px 40px,
+        $color-green,
+        2px solid $color-green,
+        $color-white,
+        $color-primary,
+        2px solid $color-primary,
+        $color-white
+      );
+    }
+  }
+}
+@keyframes formMate {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,483 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  overflow-x: hidden;
+  background-color: #fff;
+  color: #212529;
+}
+
+@media screen and (max-width: 991.98px) {
+  /* HEADER */
+  header {
+    height: auto;
+  }
+  .navbar .navbar-brand {
+    font-size: 30px;
+  }
+  .navbar {
+    padding: 0;
+  }
+  .navbar .collapse {
+    display: none;
+    flex-direction: column;
+  }
+  .bar {
+    display: block;
+  }
+  .navbar .navbar-nav .nav-item {
+    text-align: left;
+  }
+  /* CAROUSEL */
+  .realate_content {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .realate_text {
+    text-align: center;
+    width: 100%;
+  }
+  .realate_img {
+    width: 100%;
+  }
+  .sort {
+    text-align: center;
+  }
+  .product_item {
+    width: calc(50% - 30px);
+  }
+}
+@media screen and (max-width: 767.98px) {
+  /* CAROUSEL  */
+  .pcCarousel__banner {
+    min-height: 580px;
+  }
+  .pcCarousel__banner--1 {
+    background-position: center;
+  }
+  .pcCarousel__banner--2 {
+    background-position: center;
+  }
+  .pcCarousel__banner--3 {
+    background-position: center;
+  }
+  /* FOOTER */
+  .footer__top {
+    padding-bottom: 0;
+  }
+  .footer__item {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* CAROUSEL */
+  .pcCarousel__banner {
+    min-height: 500px;
+  }
+  .realate_text {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .product_item {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* CAROUSEL */
+  .pcCarousel__banner {
+    min-height: 480px;
+  }
+}
+@media screen and (max-width: 440px) {
+  /* CAROUSEL */
+  .pcCarousel__banner {
+    min-height: 440px;
+  }
+}
+.flex-between, .product .product_content .product_item .product_text .rate_buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  background-color: #189a46;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
+  display: grid;
+  align-items: center;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+}
+header .navbar .navbar-brand {
+  font-size: 34px;
+  font-weight: 600;
+  color: #1d355e;
+}
+header .navbar .bar {
+  color: #1d355e;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  header .navbar .bar {
+    display: block;
+  }
+}
+header .navbar .navbar-nav .nav-item {
+  padding: 0 16px;
+  position: relative;
+}
+header .navbar .dangKy button {
+  padding: 5px 10px;
+  background-color: #2a72dc;
+  border: 2px solid #2a72dc;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+header .navbar .dangKy button:hover {
+  color: #2a72dc;
+  border: 2px solid #2a72dc;
+  background-color: #fff;
+  transition: all 0.4s;
+  border-radius: 8px;
+  cursor: pointer;
+}
+header .navbar #navbar-content .nav-link {
+  font-size: 1.2em;
+  color: #1d355e;
+  font-weight: 400;
+  padding: 14px 0;
+  position: relative;
+  transition: all 0.5s ease;
+}
+header .navbar #navbar-content .nav-link:hover {
+  color: #fff;
+}
+header .navbar #navbar-content .nav-link::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 0;
+  background-color: #fff;
+  display: block;
+  bottom: 13px;
+  transition: all 0.5s ease;
+}
+header .navbar #navbar-content .nav-link:hover::before {
+  width: 100%;
+}
+header .navbar .shopping .fa-cart-shopping {
+  margin-left: 20px;
+  font-size: 20px;
+  color: #1d355e;
+}
+header .navbar .shopping .fa-cart-shopping:hover {
+  color: #fff;
+}
+
+.pcCarousel .pcCarousel__content .owl-theme .owl-nav {
+  display: none;
+}
+.pcCarousel .pcCarousel__content .pcCarousel__banner {
+  min-height: calc(100vh - 50px);
+  align-items: center;
+  position: relative;
+}
+.pcCarousel .pcCarousel__content .pcCarousel__banner--1 {
+  background-image: url(../img/boot-nam-1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.pcCarousel .pcCarousel__content .pcCarousel__banner--2 {
+  background-image: url(../img/giày-nike-m2k-rep-800x461.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.pcCarousel .pcCarousel__content .pcCarousel__banner--3 {
+  background-image: url(../img/11-mau-giay-doi-dep-cho-tinh-nhan-xin-so-nhat-2022-05082022113147.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.product {
+  padding: 30px 0;
+}
+.product .product_title {
+  text-align: center;
+}
+.product .product_title h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1d355e;
+}
+.product .product_content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.product .product_content .product_item {
+  width: calc(33.3333333333% - 30px);
+  padding: 20px;
+  background-color: #bddaf9;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  position: relative;
+  animation: formMate;
+  animation-duration: 1s;
+}
+@media screen and (max-width: 992px) {
+  .product .product_content .product_item {
+    width: calc(50% - 30px);
+  }
+}
+@media screen and (max-width: 650px) {
+  .product .product_content .product_item {
+    width: 100%;
+    margin: 0 25px;
+  }
+}
+.product .product_content .product_item::after {
+  content: "Bấm để xem Thông Tin";
+  position: absolute;
+  bottom: 155px;
+  left: auto;
+  height: 50px;
+  width: 89%;
+  background-color: rgba(255, 182, 193, 0.61);
+  display: none;
+  font-size: 20px;
+  color: #1d355e;
+  text-align: center;
+  line-height: 50px;
+  transition: all 0.2s;
+}
+.product .product_content .product_item img {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: all 0.5s;
+  position: relative;
+}
+.product .product_content .product_item img:hover {
+  transform: scale(1.1);
+}
+.product .product_content .product_item .product_text {
+  margin-top: 20px;
+}
+.product .product_content .product_item .product_text h3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2a72dc;
+}
+.product .product_content .product_item .product_text .rate_buy {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.product .product_content .product_item .product_text .rate_buy .rate {
+  color: rgb(235, 235, 28);
+  align-items: center;
+}
+.product .product_content .product_item .product_text .rate_buy button {
+  padding: 10px 20px;
+  background-color: #189a46;
+  border: 2px solid #189a46;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.product .product_content .product_item .product_text .rate_buy button:hover {
+  color: #2a72dc;
+  border: 2px solid #2a72dc;
+  background-color: #fff;
+  transition: all 0.4s;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #189a46;
+  padding: 20px;
+  color: #1d355e;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer .footer__top {
+  padding: 64px 0;
+}
+footer .footer__item h5 {
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+footer .footer__item ul li {
+  color: #1d355e;
+  margin-bottom: 12px;
+}
+footer .footer__item a {
+  color: #1d355e;
+  transition: all 0.5s ease;
+}
+footer .footer__item a:hover {
+  color: white;
+}
+footer .footer__item .social__icon a {
+  display: inline-block;
+  margin-right: 16px;
+}
+footer .footer__bottom {
+  border-top: 1px solid rgba(103, 99, 99, 0.14);
+}
+footer .footer__bottom a {
+  color: #f53626;
+}
+
+.realate {
+  padding: 30px;
+  color: #1d355e;
+}
+.realate h2 {
+  text-align: center;
+  margin: 30px 0;
+}
+.realate .realate_content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #cfcbcb;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.realate .realate_content .realate_img {
+  width: 60%;
+}
+.realate .realate_content .realate_img img {
+  width: 100%;
+  border-radius: 10px;
+  margin-right: 30px;
+}
+.realate .realate_content .realate_text {
+  margin: 10px 30px;
+  padding: 51px;
+}
+@media screen and (max-width: 750px) {
+  .realate .realate_content .realate_text {
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+.realate .realate_content .realate_text .realate_size .size span {
+  background-color: cadetblue;
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 10px;
+  padding: 5px;
+}
+.realate .realate_content .realate_text .realate_size .sort {
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: center;
+}
+.realate .realate_content .realate_text .realate_size .sort button {
+  padding: 8px 15px;
+  background-color: #189a46;
+  border: 2px solid #189a46;
+  color: #fff;
+  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.realate .realate_content .realate_text .realate_size .sort button:hover {
+  color: #2a72dc;
+  border: 2px solid #2a72dc;
+  background-color: #fff;
+  transition: all 0.4s;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.realate .realate_content .realate_text .realate_size .sort h2 {
+  margin: 0 20px;
+  font-size: 25px;
+  border: 1px solid #212529;
+  padding: 8px 15px;
+}
+.realate .add_car {
+  text-align: center;
+  margin-top: 30px;
+}
+.realate .add_car button {
+  padding: 8px 40px;
+  background-color: #189a46;
+  border: 2px solid #189a46;
+  color: #fff;
+  border-radius: 8px;
+}
+.realate .add_car button:hover {
+  color: #2a72dc;
+  border: 2px solid #2a72dc;
+  background-color: #fff;
+  transition: all 0.4s;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.regiter {
+  padding: 100px 0 50px;
+}
+.regiter .form-label {
+  color: #1d355e;
+  font-size: 20px;
+}
+.regiter h1 {
+  text-align: center;
+  color: #2a72dc;
+}
+.regiter .check_gender .chia_cot {
+  display: flex;
+  justify-content: space-around;
+}
+.regiter .submit {
+  text-align: center;
+}
+.regiter .submit button {
+  font-size: 20px;
+  padding: 8px 40px;
+  background-color: #189a46;
+  border: 2px solid #189a46;
+  color: #fff;
+  border-radius: 8px;
+}
+.regiter .submit button:hover {
+  color: #2a72dc;
+  border: 2px solid #2a72dc;
+  background-color: #fff;
+  transition: all 0.4s;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@keyframes formMate {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */
