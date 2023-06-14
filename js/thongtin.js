@@ -18,7 +18,14 @@ function thongTinSanPham(id) {
     var info = processData(res.data.content);
     document.getElementById("thongTin").innerHTML = info;
 
-    console.log(res.data.content2);
+    console.log(res.data.content);
+    let item = res.data.content.size;
+    let sizeHTML = "";
+    item.forEach((size) => {
+      sizeHTML += `
+      <span> ${size} </span>`;
+    });
+    document.querySelector(".size").innerHTML = sizeHTML;
   });
   promise.catch(function (orr) {});
 }
@@ -36,6 +43,10 @@ function giaoDienThongTin(array) {
   for (var i = 0; i < array.length; i++) {
     var sanPham = array[i];
 
+    // array.forEach((item) => {
+    //   sanPham.size[i];
+    // });
+    console.log(item);
     content2 += processData(sanPham);
     document.getElementById("thongTin").innerHTML = content2;
   }
@@ -53,22 +64,14 @@ function processData(sanPham) {
   <div class="realate_size">
       <h4>SIZE</h4>
       <div class="size">
-          <P>
-             <span> ${sanPham.size[0]} </span>
-             <span> ${sanPham.size[1]} </span>
-             <span> ${sanPham.size[2]} </span>
-             <span> ${sanPham.size[3]} </span>
-             <span> ${sanPham.size[4]} </span>
-             <span> ${sanPham.size[5]} </span>
-             <span> ${sanPham.size[6]} </span>
-          </P>
+       
       </div>
       <div class="giatien">
           <h1>${sanPham.price}</h1>
       </div>
       <div class="sort">
           <button onclick="giam()">-</button>
-          <h2 id="hienThiSoLuong">0</h2>
+          <h2 id="hienThiSoLuong">1</h2>
           <button onclick="tang()">+</button>
       </div>
 

@@ -82,19 +82,19 @@
                     <label for="" class="form-label">Name:</label>
                     <input type="text" name="" id="ten" class="form-control" placeholder="Họ Và Tên"
                         aria-describedby="helpId">
-                    <span class="form-message text-danger"></span>
+                    <span class="form-message text-danger" id="tbten"></span>
                 </div>
                 <div class="mb-3 form-group">
                     <label for="" class="form-label">Password:</label>
                     <input type="text" name="" id="password" class="form-control" placeholder="Nhập Mật Khẩu"
                         aria-describedby="helpId">
-                    <span class="form-message text-danger"></span>
+                    <span class="form-message text-danger" id="tbmk"></span>
                 </div>
                 <div class="mb-3 form-group">
                     <label for="" class="form-label">Confirm Password:</label>
                     <input type="text" name="" id="confirmPass" class="form-control" placeholder="Nhập lại mật khẩu"
                         aria-describedby="helpId">
-                    <span class="form-message text-danger"></span>
+                    <span class="form-message text-danger" id="tbNhapLai"></span>
                 </div>
             </div>
             <div class="col-6">
@@ -102,13 +102,13 @@
                     <label for="" class="form-label">Phone:</label>
                     <input type="text" name="" id="phone" class="form-control" placeholder="Nhập số điện thoại"
                         aria-describedby="helpId">
-                    <span class="form-message text-danger"></span>
+                    <span class="form-message text-danger" id="tbphone"></span>
                 </div>
                 <div class="mb-3 form-group">
                     <label for="" class="form-label">Email:</label>
                     <input type="text" name="" id="email" class="form-control" placeholder="Nhập Email"
                         aria-describedby="helpId">
-                    <span class="form-message text-danger"></span>
+                    <span class="form-message text-danger" id="tbemail"></span>
                 </div>
                 <div class="mb-3 check_gender form-group">
                     <label for="Gender" class="form-label gioi_tinh" id="gioiTinh">Giới Tính:</label> <br>
@@ -122,7 +122,7 @@
                             <input type="radio" checked name="Gender" value="false" id="gioiTinh">
                         </div>
                     </div>
-                    <span class="form-message text-danger"></span>
+                    <span class="form-message text-danger" id="tbGioiTinh"></span>
                 </div>
             </div>
             <div class="submit">
@@ -319,7 +319,7 @@
 
     <!-- Js  -->
     <script src="../js/vailidation.js"></script>
-    <script>
+    <!-- <script>
         validation({
             form: "#form1",
             rules: [
@@ -335,10 +335,12 @@
             ]
 
         })
-    </script>
+    </script> -->
+    <script src="../js/hotro.js"></script>
+    <script src="../js/register.js"></script>
     <script src="../js/sanpham.js"></script>
     <script src="../js/index.js"></script>
-    <script src="../js/hotro.js"></script>
+
 
     <!-- lightbox  -->
     <!-- <script src="../js/lightbox.min.js"></script>

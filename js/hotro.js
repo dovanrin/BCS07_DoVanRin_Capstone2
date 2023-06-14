@@ -15,3 +15,11 @@ $(document).ready(function () {
     $("#navbar-content").slideToggle();
   });
 });
+
+function ganGiaTriChoInput(ten, pass, confirmPass, phone, email) {
+  document.getElementById("ten").value = ten;
+  document.getElementById("password").value = pass;
+  document.getElementById("email").value = email;
+  document.getElementById("confirmPass").value = confirmPass;
+  document.getElementById("phone").value = phone;
+}

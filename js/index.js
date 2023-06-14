@@ -5,7 +5,7 @@ function getAllSanPham() {
     ResponseType: "JSON",
   });
   promise.then(function (res) {
-    console.log(res);
+    // console.log(res);
     renderGiaoDien(res.data.content);
   });
   promise.catch(function (orr) {
@@ -42,34 +42,40 @@ function renderGiaoDien(array) {
   document.getElementById("Featured_Products").innerHTML = content;
 }
 
-function setRegister() {
-  var formDangKy = new Register();
-  formDangKy.ten = document.getElementById("ten").value;
+// function setRegister() {
+//   var formDangKy = new Register();
+//   formDangKy.ten = document.getElementById("ten").value;
 
-  formDangKy.password = document.getElementById("password").value;
-  formDangKy.confirmPass = document.getElementById("confirmPass").value;
-  formDangKy.phone = document.getElementById("phone").value;
-  formDangKy.email = document.getElementById("email").value;
-  formDangKy.gioiTinh = document.querySelector(
-    'input[name="Gender"]:checked'
-  ).value;
-  // console.log(formDangKy);
-  var promise = axios({
-    url: "https://shop.cyberlearn.vn/api/Users/signup",
-    method: "POST",
-    ResponseType: JSON,
-    data: formDangKy,
-  });
-  promise.then(function (res) {});
-  promise.catch(function (orr) {});
-}
+//   formDangKy.password = document.getElementById("password").value;
+//   formDangKy.confirmPass = document.getElementById("confirmPass").value;
+//   formDangKy.phone = document.getElementById("phone").value;
+//   formDangKy.email = document.getElementById("email").value;
+//   formDangKy.gioiTinh = document.querySelector(
+//     'input[name="Gender"]:checked'
+//   ).value;
+//   // console.log(formDangKy);
+//   var promise = axios({
+//     url: "https://shop.cyberlearn.vn/api/Users/signup",
+//     method: "POST",
+//     ResponseType: JSON,
+//     data: formDangKy,
+//   });
+//   promise.then(function (res) {
+//     alert("Chúc mừng bạn đã đăng ký thành công");
+//     // document.getElementById("ten").innerHTML = "";
+//     // document.getElementById("password").innerHTML = "";
+//     // document.getElementById("confirmPass").innerHTML = "";
+//     // document.getElementById("phone").innerHTML = "";
+//     // document.getElementById("email").innerHTML = "";
+//   });
+//   promise.catch(function (orr) {
+//     alert("Đăng ký thất bại. Vui lòng nhập lại");
+//   });
+// }
 
-if (
-  document.getElementById("ten") != null &&
-  document.getElementById("ten") != undefined
-) {
-  setRegister();
-}
+// if (validation() != null && validation() != undefined) {
+//   setRegister();
+// }
 
 // ====thông tin sản phẩm=========
 // function thongTinSanPham() {
