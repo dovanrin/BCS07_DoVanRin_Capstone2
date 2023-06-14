@@ -21,7 +21,7 @@ function renderGiaoDien(array) {
 
     content += `
         <div class="product_item">
-        <a href="./delte.html?id=${sanPham.id}" onclick="thongTinSanPham()" ><img src="${sanPham.image}" alt=""></a>
+        <a href="././view/delte.html?id=${sanPham.id}" onclick="thongTinSanPham()" ><img src="${sanPham.image}" alt=""></a>
                     <div class="product_text">
                         <h3>${sanPham.name} <span>${sanPham.price}</span></h3>
 
