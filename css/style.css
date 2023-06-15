@@ -269,6 +269,7 @@ header .navbar .shopping .fa-cart-shopping:hover {
   transform: scale(1);
   transition: all 0.5s;
   position: relative;
+  background-color: #e7e1e1;
 }
 .product .product_content .product_item img:hover {
   transform: scale(1.1);

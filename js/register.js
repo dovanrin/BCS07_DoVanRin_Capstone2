@@ -59,6 +59,7 @@ function layGiaTriInput() {
   valid &= kiemTraDoDai(phone, 10, "tbphone");
   valid &= kiemTraDinhDang(ten, "tbten");
   valid &= checkPass(pass, "tbmk");
+  valid &= checkConfirm(confirmPass, pass, "tbNhapLai");
 
   if (!valid) {
     return;

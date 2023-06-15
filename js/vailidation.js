@@ -145,3 +145,10 @@ function checkPass(checkInput, idThongBao) {
     return false;
   }
 }
+function checkConfirm(checkInput, isPass, idThongBao) {
+  if (checkInput === isPass) {
+    document.getElementById(idThongBao).innerHTML = "";
+  } else {
+    document.getElementById(idThongBao).innerHTML = "Không trùng với mật khẩu";
+  }
+}

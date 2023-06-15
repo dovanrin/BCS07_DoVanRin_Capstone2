@@ -263,6 +263,7 @@ header {
         transform: scale(1);
         transition: all 0.5s;
         position: relative;
+        background-color: #e7e1e1;
         &:hover {
           transform: scale(1.1);
         }
