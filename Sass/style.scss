@@ -263,7 +263,12 @@ header {
         transform: scale(1);
         transition: all 0.5s;
         position: relative;
-        background-color: #e7e1e1;
+        background-image: linear-gradient(
+          to right,
+          rgb(167, 163, 163),
+          rgb(223, 223, 157),
+          rgb(216, 216, 87)
+        );
         &:hover {
           transform: scale(1.1);
         }
