@@ -148,7 +148,9 @@ function checkPass(checkInput, idThongBao) {
 function checkConfirm(checkInput, isPass, idThongBao) {
   if (checkInput === isPass) {
     document.getElementById(idThongBao).innerHTML = "";
+    return true;
   } else {
     document.getElementById(idThongBao).innerHTML = "Không trùng với mật khẩu";
+    return false;
   }
 }

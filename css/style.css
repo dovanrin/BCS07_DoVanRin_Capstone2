@@ -481,4 +481,32 @@ footer .footer__bottom a {
     transform: translateY(0);
     opacity: 1;
   }
+}
+.backToTop {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #189a46;
+  color: rgb(34, 33, 33);
+  position: fixed;
+  bottom: 60px;
+  right: 15px;
+  font-size: 18px;
+  line-height: 48px;
+  z-index: 99;
+  transition: all 0.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.backToTop:hover {
+  color: white;
+  transform: translateY(-5px);
+}
+
+.cd-top--is-visible {
+  visibility: visible;
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */

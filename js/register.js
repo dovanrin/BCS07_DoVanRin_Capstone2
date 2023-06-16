@@ -24,19 +24,12 @@ function setRegister() {
       ganGiaTriChoInput("", "", "", "", "");
     });
 
-    // là xog hết r ak, duđuúngùi
-    // cái catch không hoạt động a -- sửa cái link api lại nó mới chạy vô catch
-    // e nhap lai vo di
-
     promise.catch(function (orr) {
       alert("Đăng ký thất bại. Vui lòng nhập lại");
     });
   }
 }
 
-// if (validation() != null) {
-//   setRegister();
-// }
 function layGiaTriInput() {
   // lấy giữ liệu người dùng
   var ten = document.getElementById("ten").value;
